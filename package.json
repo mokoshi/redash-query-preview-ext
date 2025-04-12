@@ -1,0 +1,32 @@
+{
+  "type": "module",
+  "name": "redash-query-preview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.tsx",
+  "scripts": {
+    "build": "node esbuild.config.js && zip -r redash-query-preview.zip ./dist",
+    "dev": "node esbuild.config.js --watch"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "redash"
+  ],
+  "author": "mokoshi",
+  "license": "MIT",
+  "dependencies": {
+    "@tanstack/react-query": "^5.72.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/ace": "^0.0.52",
+    "@types/chrome": "^0.0.315",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "esbuild": "^0.25.2",
+    "esbuild-plugin-copy": "^2.1.1",
+    "typescript": "^4.4.3"
+  }
+}

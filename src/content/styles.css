@@ -1,0 +1,7 @@
+/* redash のスタイルを上書き */
+.schema-container {
+  background: #fff !important;
+}
+nav {
+  overflow-y: hidden;
+}
