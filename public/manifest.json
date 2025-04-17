@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Redash Query Preview",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Redash の Query Result のプレビューを表示します",
   "permissions": [],
   "content_scripts": [
