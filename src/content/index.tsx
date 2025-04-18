@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./app";
-import { waitForElement } from "./wait-for-element";
+import { waitForElement } from "./app/utils/wait-for-element";
 
 async function main() {
   // wait for the target element to be available and mount our app on it

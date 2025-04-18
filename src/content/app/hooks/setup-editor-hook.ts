@@ -1,3 +1,5 @@
+import { waitForElement } from "../utils/wait-for-element";
+
 declare global {
   interface Window {
     ace: AceAjax.Ace;
@@ -15,14 +17,12 @@ type Params = {
 
 export async function setupEditorHook({ onCursorChange }: Params) {
   // wait for the page to load and the target element to be available
-  const editor = await new Promise<AceAjax.Editor>((resolve) => {
-    const checkExist = setInterval(() => {
-      if (window.ace && document.getElementById("brace-editor")) {
-        clearInterval(checkExist);
-        resolve(window.ace.edit("brace-editor"));
-      }
-    }, 100);
-  });
+  await waitForElement("#brace-editor");
+  if (!window.ace) {
+    console.error("Ace editor is not loaded");
+    return;
+  }
+  const editor = window.ace.edit("brace-editor");
 
   // Get the current cursor position and extract a word from it
   function getWordFromCursor(): string {
